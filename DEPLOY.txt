@@ -1,0 +1,26 @@
+PRISM SR deployment
+
+1. In Kaggle, finish training and download /kaggle/working/prism_sr/best.pt.
+2. Extract this ZIP on your computer.
+3. Open https://huggingface.co/new-space and create a Gradio Space.
+   Use CPU Basic if available under your account plan. Review the displayed price.
+   This package targets ordinary CPU or dedicated GPU hosting, not ZeroGPU.
+   Choose Public only if you want your source code and weights publicly visible.
+4. In Files, upload app.py, requirements.txt, README.md, and YOUR best.pt.
+   Put them directly in the repository root, not in a nested folder.
+   Replace the generated README with the provided README to select Gradio 5.49.1.
+   Do not upload this ZIP as a substitute for its extracted files.
+5. Commit changes. The Space rebuilds automatically. Check App and Logs.
+6. Test with a small LR image (e.g. 128x128), then a Reference experiment.
+7. Share the Space URL. Kaggle can stop after the checkpoint has been saved.
+
+Missing best.pt: upload that exact filename in the root, then restart.
+State-dict mismatch: use weights from the matching notebook architecture.
+Build error: share the final error lines from the build log.
+Slow inference: use smaller images, or change MAX_LR_EDGE to 256 in Space settings.
+Sleeping: reopen/wake the Space before your evaluation; a stable URL is not a
+promise of always-on compute. Availability and billing depend on the host plan.
+
+Checks: source compiles; packaged model classes match the provided notebook.
+Real checkpoint inference and hosted build have NOT been tested here because
+best.pt and access to your Space were not supplied. No trained weights included.
